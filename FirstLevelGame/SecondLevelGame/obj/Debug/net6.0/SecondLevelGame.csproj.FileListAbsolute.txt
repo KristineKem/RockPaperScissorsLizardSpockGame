@@ -1,0 +1,15 @@
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\bin\Debug\net6.0\SecondLevelGame.exe
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\bin\Debug\net6.0\SecondLevelGame.deps.json
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\bin\Debug\net6.0\SecondLevelGame.runtimeconfig.json
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\bin\Debug\net6.0\SecondLevelGame.dll
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\bin\Debug\net6.0\SecondLevelGame.pdb
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\SecondLevelGame.csproj.AssemblyReference.cache
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\SecondLevelGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\SecondLevelGame.AssemblyInfoInputs.cache
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\SecondLevelGame.AssemblyInfo.cs
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\SecondLevelGame.csproj.CoreCompileInputs.cache
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\SecondLevelGame.dll
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\refint\SecondLevelGame.dll
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\SecondLevelGame.pdb
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\SecondLevelGame.genruntimeconfig.cache
+C:\Users\krist\Coding\CODELEX\VS_repos\RockPaperScissorsLizardSpockGame\FirstLevelGame\SecondLevelGame\obj\Debug\net6.0\ref\SecondLevelGame.dll
