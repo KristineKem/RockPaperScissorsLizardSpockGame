@@ -33,7 +33,7 @@
 
                     Console.WriteLine("Player:" + player);
 
-                    switch (random.Next(1, 4))
+                    switch (random.Next(1, 6))
                     {
                         case 1:
                             computer = "ROCK";
