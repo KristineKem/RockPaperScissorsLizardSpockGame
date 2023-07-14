@@ -32,7 +32,7 @@
         {
             var firstPlayerMove = RandomMove(firstPlayer);
             var secondPlayerMove = RandomMove(secondPlayer);
-                        
+
             switch (firstPlayerMove)
             {
                 case "ROCK":

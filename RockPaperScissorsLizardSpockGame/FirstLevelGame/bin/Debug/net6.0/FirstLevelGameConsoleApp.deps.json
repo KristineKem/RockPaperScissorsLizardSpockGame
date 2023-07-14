@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FirstLevelGameConsoleApp/1.0.0": {
+        "dependencies": {
+          "FirstLevelGame": "1.0.0"
+        },
+        "runtime": {
+          "FirstLevelGameConsoleApp.dll": {}
+        }
+      },
+      "FirstLevelGame/1.0.0": {
+        "runtime": {
+          "FirstLevelGame.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FirstLevelGameConsoleApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FirstLevelGame/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

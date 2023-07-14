@@ -23,16 +23,7 @@
 
                 for (int i = 0; i < 3; i++)
                 {
-                    player.Value = "";
-                    computer.Value = "";
-
-                    while (player.Value != "ROCK" && player.Value != "PAPER" && player.Value != "SCISSORS"
-                           && player.Value != "LIZARD" && player.Value != "SPOCK")
-                    {
-                        Console.WriteLine("Enter Rock, Paper, Scissors, Lizard or Spock: ");
-                        player.Value = Console.ReadLine();
-                        player.Value = player.Value.ToUpper();
-                    }
+                    InputCheck(player);
 
                     Console.WriteLine("You:" + player.Value);
 
@@ -51,6 +42,19 @@
             }
 
             return playerScore;
+        }
+
+        public static void InputCheck(Player player)
+        {
+            player.Value = "";
+
+            while (player.Value != "ROCK" && player.Value != "PAPER" && player.Value != "SCISSORS"
+                   && player.Value != "LIZARD" && player.Value != "SPOCK")
+            {
+                Console.WriteLine("Enter Rock, Paper, Scissors, Lizard or Spock: ");
+                player.Value = Console.ReadLine();
+                player.Value = player.Value.ToUpper();
+            }
         }
     }
 }

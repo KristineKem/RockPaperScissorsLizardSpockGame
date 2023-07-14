@@ -2,7 +2,7 @@
 {
     public class Game
     {
-        private static readonly GameSettings GameOption = new GameSettings();
+        private readonly GameSettings _gameSettings = new GameSettings();
 
         public void RunGame(int numberOfPlayers, int rounds)
         {
@@ -20,25 +20,16 @@
 
                     for (int i = 0; i < rounds; i++)
                     {
-                        you.Value = "";
-
-                        while (you.Value != "ROCK" && you.Value != "PAPER" && you.Value != "SCISSORS"
-                               && you.Value != "LIZARD" && you.Value != "SPOCK")
-                        {
-                            Console.WriteLine("Enter Rock, Paper, Scissors, Lizard or Spock: ");
-                            you.Value = Console.ReadLine();
-                            you.Value = you.Value.ToUpper();
-                        }
+                        InputCheck(you);
 
                         Console.WriteLine("You:" + you.Value);
 
-                        player.Value = GameOption.RandomMove(player);
+                        player.Value = _gameSettings.RandomMove(player);
 
                         Console.WriteLine("Computer: " + player.Value);
                         Console.WriteLine(" ");
 
-
-                        GameOption.YouVsComputerScore(you, player);
+                        _gameSettings.YouVsComputerScore(you, player);
                     }
                 }
 
@@ -86,7 +77,7 @@
                         {
                             for (int j = 0; j < rounds; j++)
                             {
-                                GameOption.ComputerVsComputerScore(firstPlayer, secondPlayer);
+                                _gameSettings.ComputerVsComputerScore(firstPlayer, secondPlayer);
                             }
                         }
                         else
@@ -98,6 +89,19 @@
             }
 
             return players;
+        }
+
+        public static void InputCheck(Player player)
+        {
+            player.Value = "";
+
+            while (player.Value != "ROCK" && player.Value != "PAPER" && player.Value != "SCISSORS"
+                   && player.Value != "LIZARD" && player.Value != "SPOCK")
+            {
+                Console.WriteLine("Enter Rock, Paper, Scissors, Lizard or Spock: ");
+                player.Value = Console.ReadLine();
+                player.Value = player.Value.ToUpper();
+            }
         }
     }
 }

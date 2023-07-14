@@ -16,7 +16,7 @@
 
             var game = new Game();
             game.RunGame(numberOfPlayers, rounds);
-            
+
             Console.ReadKey();
         }
     }
