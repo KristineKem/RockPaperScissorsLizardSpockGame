@@ -31,14 +31,7 @@ namespace SecondLevelGameConsoleApp
                 var choice = Console.ReadLine();
                 choice = choice.ToUpper();
 
-                if (choice == "Y")
-                {
-                    playAgain = true;
-                }
-                else
-                {
-                    playAgain = false;
-                }
+                playAgain = choice == "Y";
 
                 Console.WriteLine();
             }

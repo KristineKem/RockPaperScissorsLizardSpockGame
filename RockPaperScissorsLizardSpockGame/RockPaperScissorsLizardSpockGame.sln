@@ -9,11 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecondLevelGame", "SecondLe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdLevelGame", "ThirdLevelGame\ThirdLevelGame.csproj", "{DA7DAE02-5C6A-401F-9803-9E549BEC2B80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdLevelGameConsoleApp", "ThirdLevelGameConsoleApp\ThirdLevelGameConsoleApp.csproj", "{5E301C1A-0082-4514-A719-2DA39296B2E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdLevelGameConsoleApp", "ThirdLevelGameConsoleApp\ThirdLevelGameConsoleApp.csproj", "{5E301C1A-0082-4514-A719-2DA39296B2E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondLevelGameConsoleApp", "SecondLevelGameConsoleApp\SecondLevelGameConsoleApp.csproj", "{17DD3942-C4A3-44FB-843B-B12E4C0CCAC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecondLevelGameConsoleApp", "SecondLevelGameConsoleApp\SecondLevelGameConsoleApp.csproj", "{17DD3942-C4A3-44FB-843B-B12E4C0CCAC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstLevelGame", "FirstLevelGame1\FirstLevelGame.csproj", "{DFBEA93D-74DA-42E2-B19A-551FC5082DCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstLevelGame", "FirstLevelGame1\FirstLevelGame.csproj", "{DFBEA93D-74DA-42E2-B19A-551FC5082DCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RockPaperScissorsLizardSpockGame", "RockPaperScissorsLizardSpockGame", "{D55D78C9-1097-42B7-AC08-13B6C2991E9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissorsLizardSpockGame.Tests", "RockPaperScissorsLizardSpockGame.Tests\RockPaperScissorsLizardSpockGame.Tests.csproj", "{4128D5A4-5690-40CF-BE0C-7B31F55A633C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,21 @@ Global
 		{DFBEA93D-74DA-42E2-B19A-551FC5082DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFBEA93D-74DA-42E2-B19A-551FC5082DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFBEA93D-74DA-42E2-B19A-551FC5082DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4128D5A4-5690-40CF-BE0C-7B31F55A633C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4128D5A4-5690-40CF-BE0C-7B31F55A633C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4128D5A4-5690-40CF-BE0C-7B31F55A633C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4128D5A4-5690-40CF-BE0C-7B31F55A633C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F7D1CB25-EDCE-475D-BD26-CDA27B2C01E9} = {D55D78C9-1097-42B7-AC08-13B6C2991E9E}
+		{EA8151B7-41EF-4918-93D7-15B4A654C9DB} = {D55D78C9-1097-42B7-AC08-13B6C2991E9E}
+		{DA7DAE02-5C6A-401F-9803-9E549BEC2B80} = {D55D78C9-1097-42B7-AC08-13B6C2991E9E}
+		{5E301C1A-0082-4514-A719-2DA39296B2E6} = {D55D78C9-1097-42B7-AC08-13B6C2991E9E}
+		{17DD3942-C4A3-44FB-843B-B12E4C0CCAC5} = {D55D78C9-1097-42B7-AC08-13B6C2991E9E}
+		{DFBEA93D-74DA-42E2-B19A-551FC5082DCA} = {D55D78C9-1097-42B7-AC08-13B6C2991E9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AE0B6680-C029-4C80-A68B-29AE06E0891E}

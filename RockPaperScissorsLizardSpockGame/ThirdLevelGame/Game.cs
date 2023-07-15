@@ -7,9 +7,8 @@
         public void RunGame(int numberOfPlayers, int rounds)
         {
             bool playAgain = true;
-            var you = new Player { Name = "You", Value = "", Score = 0 };
-
-            var players = CreatePlayers(numberOfPlayers);
+            
+            var players = _gameSettings.CreatePlayers(numberOfPlayers);
 
             while (playAgain)
             {
@@ -20,43 +19,54 @@
 
                     for (int i = 0; i < rounds; i++)
                     {
-                        InputCheck(you);
+                        InputCheck(_gameSettings.you);
 
-                        Console.WriteLine("You:" + you.Value);
+                        Console.WriteLine("You:" + _gameSettings.you.Value);
 
                         player.Value = _gameSettings.RandomMove(player);
 
                         Console.WriteLine("Computer: " + player.Value);
                         Console.WriteLine(" ");
 
-                        _gameSettings.YouVsComputerScore(you, player);
+                        YouVsComputerScore(_gameSettings.you, player);
                     }
                 }
 
                 var playersWithScores = ScoreCount(rounds, players);
-                playersWithScores.Add(you);
+                playersWithScores.Add(_gameSettings.you);
                 var results = playersWithScores.OrderByDescending(x => x.Score).ToList();
 
-                Console.WriteLine("Game results: ");
-                foreach (var gamer in results)
-                {
-                    Console.WriteLine($"{gamer.Name} - {gamer.Score}");
-                }
+                GameResult(results);
 
                 playAgain = false;
             }
         }
 
-        public List<Player> CreatePlayers(int number)
+        public void ComputerVsComputerScore(Player firstPlayer, Player secondPlayer)
         {
-            List<Player> list = new List<Player>();
+            var firstPlayerMove = _gameSettings.RandomMove(firstPlayer);
+            var secondPlayerMove = _gameSettings.RandomMove(secondPlayer);
 
-            for (int i = 1; i <= number; i++)
+            if (_gameSettings.moves[firstPlayerMove].Contains(secondPlayerMove))
             {
-                list.Add(new Player { Name = "Player" + i, Value = "", Score = 0 });
+                firstPlayer.Score += 1;
             }
+            else
+            {
+                secondPlayer.Score += 1;
+            }
+        }
 
-            return list;
+        public void YouVsComputerScore(Player you, Player computer)
+        {
+            if (_gameSettings.moves[you.Value].Contains(computer.Value))
+            {
+                you.Score += 1;
+            }
+            else
+            {
+                computer.Score += 1;
+            }
         }
 
         public List<Player> ScoreCount(int rounds, List<Player> list)
@@ -77,7 +87,7 @@
                         {
                             for (int j = 0; j < rounds; j++)
                             {
-                                _gameSettings.ComputerVsComputerScore(firstPlayer, secondPlayer);
+                                ComputerVsComputerScore(firstPlayer, secondPlayer);
                             }
                         }
                         else
@@ -101,6 +111,15 @@
                 Console.WriteLine("Enter Rock, Paper, Scissors, Lizard or Spock: ");
                 player.Value = Console.ReadLine();
                 player.Value = player.Value.ToUpper();
+            }
+        }
+
+        public void GameResult(List<Player> list)
+        {
+            Console.WriteLine("Game results: ");
+            foreach (var gamer in list)
+            {
+                Console.WriteLine($"{gamer.Name} - {gamer.Score}");
             }
         }
     }

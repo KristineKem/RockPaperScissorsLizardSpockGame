@@ -1,4 +1,4 @@
-﻿namespace ThirdLevelGame
+﻿namespace ThirdLevelGameConsoleApp
 {
     public class Program
     {

@@ -2,9 +2,22 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "FirstLevelGame/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/FirstLevelGame.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FirstLevelGame.dll": {}
+        }
+      },
       "ThirdLevelGame/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FirstLevelGame": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/ThirdLevelGame.dll": {}
         },
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "FirstLevelGame/1.0.0": {
+      "type": "project",
+      "path": "../FirstLevelGame1/FirstLevelGame.csproj",
+      "msbuildProject": "../FirstLevelGame1/FirstLevelGame.csproj"
+    },
     "ThirdLevelGame/1.0.0": {
       "type": "project",
       "path": "../ThirdLevelGame/ThirdLevelGame.csproj",

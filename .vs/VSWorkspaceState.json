@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\RockPaperScissorsLizardSpockGame"
+    "\\RockPaperScissorsLizardSpockGame",
+    "\\RockPaperScissorsLizardSpockGame\\FirstLevelGame",
+    "\\RockPaperScissorsLizardSpockGame\\FirstLevelGame1"
   ],
-  "SelectedNode": "\\RockPaperScissorsLizardSpockGame\\RockPaperScissorsLizardSpockGame.sln",
+  "SelectedNode": "\\RockPaperScissorsLizardSpockGame\\FirstLevelGame1\\GameSettings.cs",
   "PreviewInSolutionExplorer": false
 }

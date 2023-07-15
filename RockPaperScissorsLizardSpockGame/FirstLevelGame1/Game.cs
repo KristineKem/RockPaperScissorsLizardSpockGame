@@ -19,10 +19,10 @@
                 Console.WriteLine("Computer: " + computer.Value);
                 Console.WriteLine(" ");
 
-                _gameSettings.ScoreCount(player, computer);
+                ScoreCount(player, computer);
             }
 
-            _gameSettings.GameResult(player, computer);
+            GameResult(player, computer);
         }
 
         public static void InputCheck(Player player)
@@ -35,6 +35,34 @@
                 Console.WriteLine("Enter Rock, Paper, Scissors, Lizard or Spock: ");
                 player.Value = Console.ReadLine();
                 player.Value = player.Value.ToUpper();
+            }
+        }
+
+        public void ScoreCount(Player player, Player computer)
+        {
+            if (_gameSettings.moves[player.Value].Contains(computer.Value))
+            {
+                player.Score += 1;
+            }
+            else
+            {
+                computer.Score += 1;
+            }
+        }
+
+        public void GameResult(Player player, Player computer)
+        {
+            if (player.Score > computer.Score)
+            {
+                Console.WriteLine("Congratulations! You won this game!");
+            }
+            else if (player.Score == computer.Score)
+            {
+                Console.WriteLine("Appears to be a tie =)");
+            }
+            else
+            {
+                Console.WriteLine("Unfortunately, you have lost this game...");
             }
         }
     }
