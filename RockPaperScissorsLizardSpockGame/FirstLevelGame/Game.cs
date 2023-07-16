@@ -1,31 +1,30 @@
-﻿namespace FirstLevelGame
+﻿using FirstLevelGame.CustomExceptions;
+
+namespace FirstLevelGame
 {
     public class Game
     {
         private readonly GameSettings _gameSettings = new GameSettings();
         public void RunGame()
         {
-            var player = new Player { Value = "", Score = 0 };
-            var computer = new Player { Value = "", Score = 0 };
-
             for (int i = 0; i < 3; i++)
             {
-                InputCheck(player);
+                InputCheck(_gameSettings.player);
 
-                Console.WriteLine("Player:" + player.Value);
+                Console.WriteLine("Player:" + _gameSettings.player.Value);
 
-                computer.Value = _gameSettings.RandomMove(computer);
+                _gameSettings.computer.Value = _gameSettings.RandomMove(_gameSettings.computer);
 
-                Console.WriteLine("Computer: " + computer.Value);
+                Console.WriteLine("Computer: " + _gameSettings.computer.Value);
                 Console.WriteLine(" ");
 
-                ScoreCount(player, computer);
+                ScoreCount(_gameSettings.player, _gameSettings.computer);
             }
 
-            GameResult(player, computer);
+            GameResult(_gameSettings.player, _gameSettings.computer);
         }
 
-        public static void InputCheck(Player player)
+        public void InputCheck(Player player)
         {
             player.Value = "";
 
@@ -40,6 +39,16 @@
 
         public void ScoreCount(Player player, Player computer)
         {
+            if(string.IsNullOrEmpty(player.Value))
+            {
+                throw new EmptyPlayerValueException();
+            }
+
+            if(string.IsNullOrEmpty(computer.Value))
+            {
+                throw new EmptyComputerValueException();
+            }
+
             if (_gameSettings.moves[player.Value].Contains(computer.Value))
             {
                 player.Score += 1;

@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstLevelGame", "FirstLeve
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RockPaperScissorsLizardSpockGame", "RockPaperScissorsLizardSpockGame", "{D55D78C9-1097-42B7-AC08-13B6C2991E9E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RockPaperScissorsLizardSpockGameTests", "RockPaperScissorsLizardSpockGameTests", "{0500B146-1C2B-4AEB-A9F6-6626537B154D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstLevelGame.Tests", "..\RockPaperScissorsLizardSpockGame.Tests\FirstLevelGame.Tests\FirstLevelGame.Tests.csproj", "{C9EDC6FC-440A-4660-A0C8-1DADF81B7324}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,10 @@ Global
 		{DFBEA93D-74DA-42E2-B19A-551FC5082DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFBEA93D-74DA-42E2-B19A-551FC5082DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFBEA93D-74DA-42E2-B19A-551FC5082DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9EDC6FC-440A-4660-A0C8-1DADF81B7324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9EDC6FC-440A-4660-A0C8-1DADF81B7324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9EDC6FC-440A-4660-A0C8-1DADF81B7324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9EDC6FC-440A-4660-A0C8-1DADF81B7324}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +66,7 @@ Global
 		{5E301C1A-0082-4514-A719-2DA39296B2E6} = {D55D78C9-1097-42B7-AC08-13B6C2991E9E}
 		{17DD3942-C4A3-44FB-843B-B12E4C0CCAC5} = {D55D78C9-1097-42B7-AC08-13B6C2991E9E}
 		{DFBEA93D-74DA-42E2-B19A-551FC5082DCA} = {D55D78C9-1097-42B7-AC08-13B6C2991E9E}
+		{C9EDC6FC-440A-4660-A0C8-1DADF81B7324} = {0500B146-1C2B-4AEB-A9F6-6626537B154D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AE0B6680-C029-4C80-A68B-29AE06E0891E}

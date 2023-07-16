@@ -2,6 +2,9 @@
 {
     public class GameSettings
     {
+        public Player player = new Player { Value = "", Score = 0 };
+        public Player computer = new Player { Value = "", Score = 0 };
+
         private readonly string[] _choices = { "ROCK", "SCISSORS", "PAPER", "LIZARD", "SPOCK" };
 
         public readonly Dictionary<string, string> moves = new()
