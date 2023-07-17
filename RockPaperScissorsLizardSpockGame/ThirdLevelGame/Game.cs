@@ -1,4 +1,6 @@
-﻿namespace ThirdLevelGame
+﻿using ThirdLevelGame.CustomExceptions;
+
+namespace ThirdLevelGame
 {
     public class Game
     {
@@ -71,6 +73,11 @@
 
         public List<Player> ScoreCount(int rounds, List<Player> list)
         {
+            if (rounds <= 0)
+            {
+                throw new ZeroRoundsException();
+            }
+
             List<Player> players = list;
 
             for (int i = 0; i < list.Count - 1; i++)
@@ -101,7 +108,7 @@
             return players;
         }
 
-        public static void InputCheck(Player player)
+        public void InputCheck(Player player)
         {
             player.Value = "";
 

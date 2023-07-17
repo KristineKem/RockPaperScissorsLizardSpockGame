@@ -1,4 +1,6 @@
-﻿namespace ThirdLevelGame
+﻿using ThirdLevelGame.CustomExceptions;
+
+namespace ThirdLevelGame
 {
     public class GameSettings
     {
@@ -6,13 +8,13 @@
 
         private readonly string[] _choices = { "ROCK", "SCISSORS", "PAPER", "LIZARD", "SPOCK" };
 
-        public readonly Dictionary<string, string> moves = new()
+        public readonly Dictionary<string, List<string>> moves = new()
         {
-            { "ROCK", "SCISSORS, LIZARD" },
-            { "SCISSORS", "PAPER, LIZARD" },
-            { "PAPER", "ROCK, SPOCK" },
-            { "LIZARD", "SPOCK, PAPER" },
-            { "SPOCK", "SCISSORS, ROCK" }
+            { "ROCK", new List<string> {"SCISSORS", "LIZARD"} },
+            { "SCISSORS", new List<string> {"PAPER", "LIZARD"} },
+            { "PAPER", new List<string> {"ROCK", "SPOCK"} },
+            { "LIZARD", new List<string> {"SPOCK", "PAPER"} },
+            { "SPOCK", new List<string> {"SCISSORS", "ROCK"} }
         };
 
         public string RandomMove(Player player)
@@ -26,6 +28,11 @@
 
         public List<Player> CreatePlayers(int number)
         {
+            if (number <= 0)
+            {
+                throw new EmptyListException();
+            }
+
             List<Player> list = new List<Player>();
 
             for (int i = 1; i <= number; i++)

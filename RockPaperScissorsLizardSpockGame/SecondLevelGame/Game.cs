@@ -1,4 +1,6 @@
-﻿namespace SecondLevelGame
+﻿using SecondLevelGame.CustomExceptions;
+
+namespace SecondLevelGame
 {
     public class Game
     {
@@ -36,7 +38,7 @@
             return playerScore;
         }
 
-        public static void InputCheck(Player player)
+        public void InputCheck(Player player)
         {
             player.Value = "";
 
@@ -51,6 +53,16 @@
 
         public void ScoreCount(Player player, Player computer)
         {
+            if (string.IsNullOrEmpty(player.Value))
+            {
+                throw new EmptyPlayerValueException();
+            }
+
+            if (string.IsNullOrEmpty(computer.Value))
+            {
+                throw new EmptyComputerValueException();
+            }
+
             if (_gameSettings.moves[player.Value].Contains(computer.Value))
             {
                 player.Score += 1;

@@ -1,8 +1,7 @@
-﻿using FirstLevelGame.CustomExceptions;
-using FluentAssertions;
-using System.Text.RegularExpressions;
+﻿using FluentAssertions;
+using SecondLevelGame.CustomExceptions;
 
-namespace FirstLevelGame.Tests
+namespace SecondLevelGame.Tests
 {
     public class GameTests
     {
@@ -137,46 +136,5 @@ namespace FirstLevelGame.Tests
 
             act.Should().Throw<EmptyComputerValueException>();
         }
-
-        [Test]
-        public void GameResult_WhenPlayerWins_ReturnsCongratulations()
-        {
-            Player player = new Player { Score = 2 };
-            Player computer = new Player { Score = 1 };
-            var consoleOutput = new StringWriter();
-            Console.SetOut(consoleOutput);
-
-            _game.GameResult(player, computer);
-
-            consoleOutput.ToString().Should().Contain("Congratulations! You won this game!");
-        }
-
-        [Test]
-        public void GameResult_WhenGameIsATie_ReturnsGameIsATie()
-        {
-            Player player = new Player { Score = 1 };
-            Player computer = new Player { Score = 1 };
-            var consoleOutput = new StringWriter();
-            Console.SetOut(consoleOutput);
-
-            _game.GameResult(player, computer);
-
-            consoleOutput.ToString().Should().Contain("Appears to be a tie =)");
-        }
-
-        [Test]
-        public void GameResult_WhenComputerWins_ReturnsYouLost()
-        {
-            Player player = new Player { Score = 1 };
-            Player computer = new Player { Score = 2 };
-            var consoleOutput = new StringWriter();
-            Console.SetOut(consoleOutput);
-
-            _game.GameResult(player, computer);
-
-            consoleOutput.ToString().Should().Contain("Unfortunately, you have lost this game...");
-        }
-
-       
     }
 }
