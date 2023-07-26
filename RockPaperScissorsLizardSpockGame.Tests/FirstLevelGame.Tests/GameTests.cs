@@ -185,8 +185,6 @@ namespace FirstLevelGame.Tests
             consoleOutput.ToString().Should().Contain("Unfortunately, you have lost this game...");
         }
 
-        /* ToDo */
-
         [Test]
         public void RunGame_TimesShouldRunInputCheck_RunsThreeTimes()
         {
