@@ -1,17 +1,23 @@
 ﻿using FirstLevelGame.CustomExceptions;
 using FluentAssertions;
 using System.Text.RegularExpressions;
+using Moq;
+using Moq.AutoMock;
+using System.Net.Sockets;
 
 namespace FirstLevelGame.Tests
 {
     public class GameTests
     {
-        private Game _game;
+        private Game? _game;
+        private AutoMocker? _mocker;
+
 
         [SetUp]
         public void SetUp()
         {
             _game = new Game();
+            _mocker = new AutoMocker();
         }
 
         [Test]
@@ -82,12 +88,13 @@ namespace FirstLevelGame.Tests
         [Test]
         public void ScoreCount_ShouldCountComputerScore_ReturnComputerScoreCounted()
         {
-            Player player = new Player();
-            player.Value = "ROCK";
-            Player computer = new Player();
-            computer.Value = "PAPER";
+            Player player = new Player { Value = "ROCK" };
+            Player computer = new Player { Value = "PAPER" };
+            var mockedGameSettings = _mocker.GetMock<GameSettings>();
 
-            _game.ScoreCount(player, computer);
+            var game = new Game(mockedGameSettings.Object);
+
+            game.ScoreCount(player, computer);
 
             computer.Score.Should().Be(1);
         }
@@ -95,12 +102,13 @@ namespace FirstLevelGame.Tests
         [Test]
         public void ScoreCount_ShouldCountPlayerScore_ReturnPlayerScoreCounted()
         {
-            Player player = new Player();
-            player.Value = "SCISSORS";
-            Player computer = new Player();
-            computer.Value = "PAPER";
+            Player player = new Player { Value = "SCISSORS" };
+            Player computer = new Player { Value = "PAPER" };
+            var mockedGameSettings = _mocker.GetMock<GameSettings>();
 
-            _game.ScoreCount(player, computer);
+            var game = new Game(mockedGameSettings.Object);
+
+            game.ScoreCount(player, computer);
 
             player.Score.Should().Be(1);
         }
@@ -177,6 +185,23 @@ namespace FirstLevelGame.Tests
             consoleOutput.ToString().Should().Contain("Unfortunately, you have lost this game...");
         }
 
-       
+        /* ToDo */
+
+        [Test]
+        public void RunGame_TimesShouldRunInputCheck_RunsThreeTimes()
+        {
+            var game = _mocker.CreateInstance<Game>();
+
+            var stringWriter = new StringWriter();
+            var input = new StringReader("ROCK\nPAPER\nSCISSORS\n");
+
+            Console.SetIn(input);
+            Console.SetOut(stringWriter);
+ 
+            game.RunGame();
+
+            _mocker.Verify<Game>(x => x.InputCheck(It.IsAny<Player>()), Times.Exactly(3));
+            
+        }
     }
 }

@@ -46,10 +46,12 @@ namespace ThirdLevelGame
 
         public void ComputerVsComputerScore(Player firstPlayer, Player secondPlayer)
         {
-            var firstPlayerMove = _gameSettings.RandomMove(firstPlayer);
-            var secondPlayerMove = _gameSettings.RandomMove(secondPlayer);
-
-            if (_gameSettings.moves[firstPlayerMove].Contains(secondPlayerMove))
+            if (firstPlayer.Value.Equals(secondPlayer.Value))
+            {
+                firstPlayer.Score += 0;
+                secondPlayer.Score += 0;
+            }
+            else if (_gameSettings.moves[firstPlayer.Value].Contains(secondPlayer.Value))
             {
                 firstPlayer.Score += 1;
             }
@@ -94,6 +96,9 @@ namespace ThirdLevelGame
                         {
                             for (int j = 0; j < rounds; j++)
                             {
+                                _gameSettings.RandomMove(firstPlayer);
+                                _gameSettings.RandomMove(secondPlayer);
+
                                 ComputerVsComputerScore(firstPlayer, secondPlayer);
                             }
                         }

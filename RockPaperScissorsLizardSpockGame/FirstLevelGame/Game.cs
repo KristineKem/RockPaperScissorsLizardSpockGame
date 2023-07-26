@@ -4,7 +4,15 @@ namespace FirstLevelGame
 {
     public class Game
     {
-        private readonly GameSettings _gameSettings = new GameSettings();
+        private readonly GameSettings _gameSettings;
+
+        public Game(GameSettings gameSettings)
+        {
+            _gameSettings = gameSettings;
+        }
+
+        public Game() { }
+
         public void RunGame()
         {
             for (int i = 0; i < 3; i++)

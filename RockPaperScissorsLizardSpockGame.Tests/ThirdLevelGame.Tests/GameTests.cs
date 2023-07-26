@@ -81,10 +81,8 @@ namespace ThirdLevelGame.Tests
         [Test]
         public void ComputerVsComputerScore_FirstComputerShouldGetPoint_ReturnsFirstComputerScoreOne()
         {
-            Player firstComputer = new Player();
-            firstComputer.Value = "ROCK";
-            Player secondComputer = new Player();
-            secondComputer.Value = "SCISSORS";
+            Player firstComputer = new Player { Value = "ROCK", Score = 0 };
+            Player secondComputer = new Player { Value = "LIZARD", Score = 0 };
 
             _game.ComputerVsComputerScore(firstComputer, secondComputer);
 
@@ -94,14 +92,24 @@ namespace ThirdLevelGame.Tests
         [Test]
         public void ComputerVsComputerScore_SecondComputerShouldGetPoint_ReturnsSecondComputerScoreOne()
         {
-            Player firstComputer = new Player();
-            firstComputer.Value = "ROCK";
-            Player secondComputer = new Player();
-            secondComputer.Value = "PAPER";
+            Player firstComputer = new Player { Value = "PAPER", Score = 0 };
+            Player secondComputer = new Player { Value = "SCISSORS", Score = 0 };
 
             _game.ComputerVsComputerScore(firstComputer, secondComputer);
 
             secondComputer.Score.Should().Be(1);
+        }
+
+        [Test]
+        public void ComputerVsComputerScore_GameIsATie_ReturnsBothPlayersScoreZero()
+        {
+            Player firstComputer = new Player { Value = "LIZARD", Score = 0 };
+            Player secondComputer = new Player { Value = "LIZARD", Score = 0 };
+
+            _game.ComputerVsComputerScore(firstComputer, secondComputer);
+
+            firstComputer.Score.Should().Be(0);
+            secondComputer.Score.Should().Be(0);
         }
 
         [Test]
